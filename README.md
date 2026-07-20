@@ -4,6 +4,14 @@ Asistente virtual para SANED Odontologia, desarrollado para el Challenge Alura A
 
 El proyecto simula un agente inteligente para un consultorio odontologico. Su objetivo es responder dudas frecuentes de pacientes usando documentos oficiales de la clinica como fuente de informacion.
 
+## Demo publica
+
+La aplicacion esta publicada en Streamlit Community Cloud:
+
+https://saned-odontologia-ai-agent.streamlit.app
+
+![Aplicacion publicada en Streamlit respondiendo sobre servicios](docs/assets/streamlit-deploy-services.png)
+
 ## Problema que resuelve
 
 En un consultorio odontologico, muchas preguntas se repiten todos los dias: servicios disponibles, cancelaciones, reagendamiento, cuidados antes o despues de un tratamiento y privacidad de datos del paciente.
@@ -167,9 +175,29 @@ OPENAI_MODEL=gpt-4o-mini
 
 **Respuesta esperada:** El agente debe responder usando la politica de privacidad de datos del paciente y explicar el uso de la informacion segun la documentacion disponible.
 
+### Evidencias de respuestas generadas
+
+**Pregunta:** Que servicios ofrece SANED Odontologia?
+
+**Respuesta generada:** El agente responde con servicios como consulta odontologica, limpieza profesional, blanqueamiento dental, ortodoncia, endodoncia, implantologia, cirugia oral y protesis dentales.
+
+![Respuesta del agente sobre servicios odontologicos](docs/assets/streamlit-deploy-services.png)
+
+**Pregunta:** Como puedo reagendar una cita?
+
+**Respuesta generada:** El agente indica canales de contacto como WhatsApp institucional, llamada telefonica, correo electronico y atencion presencial. Tambien solicita datos necesarios para identificar la cita y gestionar la reprogramacion.
+
+![Respuesta del agente sobre reagendamiento](docs/assets/streamlit-deploy-reagendar.png)
+
+**Pregunta fuera del dominio:** Cuantos goles anoto Messi en el mundial 2026?
+
+**Respuesta generada:** El agente reconoce que la informacion no pertenece al contexto documental de SANED Odontologia y evita inventar una respuesta.
+
+![Respuesta del agente ante una pregunta fuera del dominio](docs/assets/streamlit-deploy-out-of-scope.png)
+
 ## Deploy en Streamlit Community Cloud
 
-La forma recomendada de publicar este proyecto es Streamlit Community Cloud, porque la aplicacion ya esta construida con Streamlit y puede desplegarse directamente desde GitHub.
+La aplicacion fue publicada en Streamlit Community Cloud, porque el proyecto ya esta construido con Streamlit y puede desplegarse directamente desde GitHub.
 
 Pasos para publicar:
 
@@ -187,18 +215,12 @@ OPENROUTER_API_KEY = "tu_clave_openrouter"
 OPENROUTER_MODEL = "openrouter/free"
 ```
 
-Una vez desplegada, agregar aqui la evidencia:
+Evidencia del deploy:
 
 ```text
-URL publica en Streamlit: pendiente
-Captura de pantalla: pendiente
-Fecha de deploy: pendiente
-```
-
-La URL final tendra un formato similar a:
-
-```text
-https://saned-odontologia-ai-agent.streamlit.app
+URL publica en Streamlit: https://saned-odontologia-ai-agent.streamlit.app
+Capturas de pantalla: docs/assets/
+Fecha de deploy: 20 de julio de 2026
 ```
 
 ## Limitaciones
