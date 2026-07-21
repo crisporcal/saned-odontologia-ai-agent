@@ -231,4 +231,6 @@ Fecha de deploy: 20 de julio de 2026
 
 ## Autor
 Cristhian Pereira Porcal
+
+
 Proyecto desarrollado para el Challenge Alura Agente.
