@@ -56,6 +56,12 @@ def retrieve(question: str, chunks: list[Document], limit: int = 4) -> list[Retr
                     document_name=chunk.metadata.get("document_name", "Documento"),
                     content=chunk.page_content.strip(),
                     score=score,
+                    page_number=(
+                        chunk.metadata["page"] + 1
+                        if type(chunk.metadata.get("page")) is int
+                        and chunk.metadata["page"] >= 0
+                        else None
+                    ),
                 )
             )
 
