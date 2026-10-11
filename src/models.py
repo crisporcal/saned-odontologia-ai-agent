@@ -8,6 +8,13 @@ class RetrievedSource:
     document_name: str
     content: str
     score: float
+    page_number: int | None = None
+
+    @property
+    def citation(self) -> str:
+        if self.page_number is None:
+            return self.document_name
+        return f"{self.document_name} (p. {self.page_number})"
 
 
 @dataclass(frozen=True)

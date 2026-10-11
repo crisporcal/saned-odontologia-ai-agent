@@ -65,7 +65,7 @@ if st.button("Preguntar al agente", type="primary"):
         if result.sources:
             st.subheader("Fuentes consultadas")
             for source in result.sources:
-                with st.expander(f"{source.document_name} | relevancia {source.score:.2f}"):
+                with st.expander(f"{source.citation} | relevancia {source.score:.2f}"):
                     st.write(source.content)
 
         st.caption(f"Modo de respuesta: {result.mode}")

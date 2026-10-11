@@ -46,7 +46,7 @@ def generate_llm_answer(question: str, sources: list[RetrievedSource]) -> tuple[
         return None, "local"
 
     context = "\n\n".join(
-        f"Fuente: {source.document_name}\n{source.content}" for source in sources
+        f"Fuente: {source.citation}\n{source.content}" for source in sources
     )
 
     try:
@@ -102,7 +102,7 @@ def build_llm_client() -> dict[str, ChatOpenAI | str] | None:
 
 def generate_local_answer(sources: list[RetrievedSource]) -> str:
     best_source = sources[0]
-    source_names = ", ".join(sorted({source.document_name for source in sources}))
+    source_names = ", ".join(sorted({source.citation for source in sources}))
     summary = summarize_text(best_source.content)
 
     return (

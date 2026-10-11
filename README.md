@@ -51,7 +51,7 @@ Flujo principal:
 4. Si existe `OPENROUTER_API_KEY`, usa OpenRouter con un modelo gratuito configurable.
 5. Si no existe OpenRouter pero existe `OPENAI_API_KEY`, usa ChatGPT para generar una respuesta basada en el contexto.
 6. Si no existe ninguna clave, usa un modo local extractivo para que la demo siga funcionando.
-7. La respuesta se muestra en Streamlit junto con las fuentes consultadas.
+7. La respuesta se muestra en Streamlit junto con las fuentes consultadas y la pagina del PDF de cada fragmento (por ejemplo, `Guia de servicios (p. 2)`). Las paginas se cuentan desde 1. Si la fuente no tiene metadatos de pagina, se muestra solo el nombre del documento.
 
 ## Tecnologias
 
@@ -222,6 +222,18 @@ URL publica en Streamlit: https://saned-odontologia-ai-agent.streamlit.app
 Capturas de pantalla: docs/assets/
 Fecha de deploy: 20 de julio de 2026
 ```
+
+## Pruebas
+
+Con las dependencias instaladas y el entorno virtual activo:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+Las pruebas verifican las referencias de pagina, la compatibilidad con fuentes sin
+metadatos, el contexto enviado al modelo y la carga de los PDFs incluidos.
+No requieren claves API ni realizan llamadas a proveedores de IA.
 
 ## Limitaciones
 
